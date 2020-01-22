@@ -1,0 +1,111 @@
+
+/* -------begin customization-------- */   
+$body-bg: #eeeeee;
+$body-color: #111;
+$font-family-sans-serif: "Open Sans", sans-serif;
+
+$primary: #3ec89d;
+$secondary: #3ab7ff;
+$success: #65ff9f;
+$info: #7164ff;
+$warning: #ff9f65;
+$danger: #ff457b;
+$light: #f2d4ff;
+$dark: #18181d; 
+
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark 
+);
+
+$enable-rounded: false;
+$enable-shadows: true;
+$enable-gradients: false;
+$enable-grid-classes: true;
+$enable-print-styles: true;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 640px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+/* -------end customization-------- */
+
+
+
+@import "node_modules/bootstrap/scss/bootstrap";
+body {
+    height: 100vh;
+}
+
+
+/* optionally create new custom classes from existing classes */
+.row-dark {
+    @extend .row;
+    background-color: #333333;
+    color: #ffffff;
+}
+h1 {
+	color: $primary;
+}
+h2 {
+  color: $secondary;
+}
+h3 {
+  color: $success;
+}
+h4 {
+  color: $info;
+}
+h5 {
+  color: $danger;
+}
+
+
+.testing {
+  width: percentage(5/7);
+}
+
+
+// No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+@include media-breakpoint-up(sm) { 
+  body {
+    background: $body-bg
+  }
+}
+@include media-breakpoint-up(md) { 
+  body {
+    background: $body-bg
+  }
+}
+@include media-breakpoint-up(lg) { 
+  body {
+    background: $body-bg
+  }
+}
+@include media-breakpoint-up(xl) { 
+  body {
+    background: $body-bg
+  }
+}
+
+
+// No media query necessary for xl breakpoint as it has no upper bound on its width
+@include media-breakpoint-down(xs) { 
+ }
+@include media-breakpoint-down(sm) { 
+ }
+@include media-breakpoint-down(md) { 
+ }
+@include media-breakpoint-down(lg) { 
+ }
